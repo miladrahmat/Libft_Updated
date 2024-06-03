@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:12:19 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/03 11:36:15 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:52:54 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
-
 
 //get_next_line functions
 char	*get_next_line(int fd);
