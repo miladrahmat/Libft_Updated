@@ -6,17 +6,36 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:12:19 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/05/31 11:08:27 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:36:15 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define MAX_FD 1024
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
+
+
+//get_next_line functions
+char	*get_next_line(int fd);
+size_t	ft_strlen_nl(const char *str);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+//ft_printf functions
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_putdecimal(int n);
+int		ft_putstr(char *s);
+int		ft_putunsign(unsigned int n);
+int		ft_printhex(unsigned int n, char format);
+int		ft_putaddress(void *ptr);
 
 //mandatory functions
 void	ft_bzero(void *str, size_t n);
@@ -70,14 +89,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-//ft_printf functions
-int		ft_printf(const char *str, ...);
-int		ft_putchar(char c);
-int		ft_putdecimal(int n);
-int		ft_putstr(char *s);
-int		ft_putunsign(unsigned int n);
-int		ft_printhex(unsigned int n, char format);
-int		ft_putaddress(void *ptr);
 
 #endif

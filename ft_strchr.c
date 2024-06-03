@@ -6,15 +6,19 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:28:58 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/05/08 10:33:00 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:40:11 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	i;
 	char			*ptr;
 
+	if (s == NULL)
+		return (0);
 	i = 0;
 	while (s[i] != '\0')
 	{
