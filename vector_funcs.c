@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:46:26 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/06 15:46:19 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:18:43 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	vec_from(t_vec *dst, void *src, size_t len, size_t elem_size)
 	if (vec_new(dst, len, elem_size) < 0)
 		return (-1);
 	dst->len = len;
-	ft_memcpy(dst->memory, src, dst->alloc_size);
+	ft_memmove(dst->memory, src, dst->alloc_size);
 	return (1);
 }
 
@@ -56,7 +56,7 @@ int	vec_copy(t_vec *dst, t_vec *src)
 {
 	if (dst == NULL || src == NULL)
 		return (-1);
-	ft_memcpy(dst->memory, src->memory, dst->alloc_size);
+	ft_memmove(dst->memory, src->memory, dst->alloc_size);
 	dst->len = src->len;
 	dst->elem_size = src->elem_size;
 	return (1);
@@ -75,7 +75,7 @@ int	vec_resize(t_vec *src, size_t target_len)
 		src->memory = temp;
 		return (-1);
 	}
-	ft_memcpy(src->memory, temp, src->alloc_size);
+	ft_memmove(src->memory, temp, src->alloc_size);
 	src->alloc_size = src->len * target_len;
 	free(temp);
 	return (1);
