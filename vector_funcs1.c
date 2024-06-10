@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:10:45 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/07 16:00:19 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:53:11 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,26 @@ void	*vec_get(t_vec *src, size_t index)
 
 int	vec_insert(t_vec *dst, void *src, size_t index)
 {
-	void	temp;
-
-	if (dst == NULL || src == NULL || dst->len <= index)
+	if (dst == NULL || src == NULL || dst->len < index)
 		return (-1);
-	if ((dst->len + 1) * dst->elem_size >= dst->alloc_size)
-		if (vec_resize(dst, dst->len + 1) < 0)
+	else if (dst->len == index)
+		return (vec_push(dst, src));
+	if (dst->len * dst->elem_size >= dst->alloc_size)
+		if (vec_resize(dst, dst->len * 2) < 0)
 			return (-1);
-	while (index < dst->len)
-	{
-		temp = vec_get(dst, index);
-		ft_memmove(&dst->memory[dst->elem_size * index], src, dst->elem_size);
-		ft_memmove(src, &dst->memory[dst->elem_size * index], dst->elem_size);
-		ft_memmove(&dst->memory[dst->elem_size * index + 1], temp, \
-			dst->elem_size);
-		index++;
-	}
+	ft_memmove(vec_get(dst, index) + dst->elem_size, vec_get(dst, index), \
+		(dst->len - index) * dst->elem_size);
+	ft_memcpy(vec_get(dst, index), src, dst->elem_size);
+	dst->len++;
+	return (1);
+}
+
+int	vec_remove(t_vec *src, size_t index)
+{
+	if (src == NULL || src->len <= index)
+		return (-1);
+	ft_memmove(vec_get(src, index), vec_get(src, index) + src->elem_size, \
+		(src->len - index) * src->elem_size);
+	src->len--;
 	return (1);
 }

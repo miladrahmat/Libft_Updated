@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 10:41:21 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/07 15:59:05 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/10 16:51:04 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,13 @@ int		vec_push(t_vec *dst, void *src);
 int		vec_pop(void *dst, t_vec *src);
 void	*vec_get(t_vec *src, size_t index);
 int		vec_insert(t_vec *dst, void *src, size_t index);
+int		vec_remove(t_vec *src, size_t index);
+int		vec_append(t_vec *dst, t_vec *src);
+int		vec_prepend(t_vec *dst, t_vec *src);
+void	vec_iter(t_vec *src, void (*f)(void *));
+void	vec_map(t_vec *dst, t_vec *src, void (*f)(void *));
+int		vec_filter(t_vec *dst, t_vec *src, bool (*f)(void *));
+int		vec_reduce(void *acc, t_vec *src, void (*f)(void *, void *));
+int		vec_sort(t_vec *src, int (*f)(void *, void *));
 
 #endif
