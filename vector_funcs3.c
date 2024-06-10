@@ -6,12 +6,11 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:30:27 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/10 18:30:36 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/10 18:37:51 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <stdio.h>
 
 int	vec_reduce(void *acc, t_vec *src, void (*f)(void *, void *))
 {

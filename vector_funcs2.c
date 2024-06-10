@@ -6,12 +6,11 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:56:46 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/10 17:50:18 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/06/10 18:38:01 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <stdio.h>
 
 int	vec_append(t_vec *dst, t_vec *src)
 {
