@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: mrahmat- < mrahmat-@student.hive.fi >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:12:19 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/06/06 12:37:18 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:41:23 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define MAX_FD 1024
+# define HEX_BASE "0123456789abcdef"
+# define OCTAL_BASE "012345678"
+# define BINARY_BASE "01"
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
