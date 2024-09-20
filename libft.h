@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:12:19 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/09/20 15:22:19 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/09/20 17:45:49 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@
 #  define BUFFER_SIZE 42
 # endif
 
-//get_next_line functions
+/******************************************************************************/
+/*                                                                            */
+/*                            GET_NEXT_LINE FUNCTIONS                         */
+/*                                                                            */
+/******************************************************************************/
 
 /**
  * Reads a line from the given file descriptor.
@@ -50,7 +54,11 @@ char	*get_next_line(int fd);
  */
 size_t	ft_strlen_nl(const char *str);
 
-//ft_printf functions
+/******************************************************************************/
+/*                                                                            */
+/*                            FT_PRINTF FUNCTIONS                             */
+/*                                                                            */
+/******************************************************************************/
 
 /**
  * Writes the formatted string to the standard output.
@@ -118,7 +126,11 @@ int		ft_printhex(unsigned int n, char format);
  */
 int		ft_putaddress(void *ptr);
 
-//mandatory functions
+/******************************************************************************/
+/*                                                                            */
+/*                            MANDATORY FUNCTIONS                             */
+/*                                                                            */
+/******************************************************************************/
 
 /**
  * Writes `n` zeroed bytes to the string.
@@ -479,7 +491,11 @@ void	ft_putendl_fd(char *s, int fd);
  */
 void	ft_putnbr_fd(int n, int fd);
 
-//bonus functions
+/******************************************************************************/
+/*                                                                            */
+/*                               BONUS FUNCTIONS                              */
+/*                                                                            */
+/******************************************************************************/
 
 /**
  * List structure that can contain any type of data.
