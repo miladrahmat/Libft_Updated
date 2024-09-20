@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:12:19 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/09/20 15:17:45 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:22:19 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # define MAX_FD 1024
 # define HEX_BASE "0123456789abcdef"
-# define OCTAL_BASE "012345678"
+# define OCTAL_BASE "01234567"
 # define BINARY_BASE "01"
 # include <stdlib.h>
 # include <unistd.h>
