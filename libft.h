@@ -6,7 +6,7 @@
 /*   By: mrahmat- <mrahmat-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:12:19 by mrahmat-          #+#    #+#             */
-/*   Updated: 2024/09/20 17:45:49 by mrahmat-         ###   ########.fr       */
+/*   Updated: 2024/09/23 12:24:10 by mrahmat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int		ft_printf(const char *str, ...);
 /**
  * Writes a character to the standard output.
  * 
- * @param[in] c The charaacter to write.
+ * @param[in] c The character to write.
  * 
  * @returns 1 on success and -1 on an error.
  */
@@ -135,7 +135,7 @@ int		ft_putaddress(void *ptr);
 /**
  * Writes `n` zeroed bytes to the string.
  * 
- * @param[in] str The string to write to.
+ * @param[out] str The string to write to.
  * @param[in] n The number of bytes to write.
  */
 void	ft_bzero(void *str, size_t n);
@@ -219,7 +219,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /**
  * Copies `n` bytes from memory area `src` to `dst`.
  * 
- * @param[in] dst The memory area to copy to.
+ * @param[out] dst The memory area to copy to.
  * @param[in] src The memory area to copy from.
  * @param[in] n The amount of bytes to copy.
  * 
@@ -230,7 +230,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 /**
  * Copies `len` bytes from memory area `src` to `dst`.
  * 
- * @param[in] dst The memory area to copy to.
+ * @param[out] dst The memory area to copy to.
  * @param[in] src The memory area to copy from.
  * @param[in] len The length of memory area `src`.
  * 
@@ -241,7 +241,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 /**
  * Writes `len` bytes of value `c` to the memory area `str`.
  * 
- * @param[in] str The memory area to write to.
+ * @param[out] str The memory area to write to.
  * @param[in] c The byte value to write.
  * @param[in] len The amount of bytes to write.
  * 
@@ -264,7 +264,7 @@ char	*ft_strchr(const char *s, int c);
  * Appends the string `src` to the end of the string `dst`
  * and NULL-terminate the result.
  * 
- * @param[in] dst The string to append to.
+ * @param[out] dst The string to append to.
  * @param[in] src The string to copy from.
  * @param[in] dstsize The size of `dst`.
  * 
@@ -276,7 +276,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
  * Copies up to `dstsize -1` characters from the string `src`
  * to the string `dst` and NULL-terminates the result.
  * 
- * @param[in] dst The string to copy to.
+ * @param[out] dst The string to copy to.
  * @param[in] src The string to copy from.
  * @param[in] dstsize The amount of bytes to copy.
  * 
@@ -360,7 +360,25 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
  * @returns The integer representation of `str`.
  */
 int		ft_atoi(const char *str);
+
+/**
+ * Converts the initial portion of the string `str` into long representation.
+ * 
+ * @param[in] str The string to convert.
+ * 
+ * @returns The long representation of `str`.
+ */
 long	ft_atol(const char *str);
+
+/**
+ * Converts the initial portion of the string `str` (which base can be in any
+ * base) into integer representation.
+ * 
+ * @param[in] str The string to convert.
+ * @param[in] base An integer representing the length of the base.
+ * 
+ * @returns The integer representation of `str`.
+ */
 int		ft_atoi_base(const char *str, int base);
 
 /**
@@ -454,7 +472,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
  * Applies the function `f` to each character of the string `s`, passing its
  * index as first argument.
  * 
- * @param[in] s The string to apply the function `f` to.
+ * @param[out] s The string to apply the function `f` to.
  * @param[in] f The function to apply to each character of string `s`.
  */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -523,7 +541,7 @@ t_list	*ft_lstnew(void *content);
 /**
  * Adds the node `new` at the beginning of the list.
  * 
- * @param[in] lst The list to add the node to.
+ * @param[out] lst The list to add the node to.
  * @param[in] new The new node to add to the list.
  */
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -549,7 +567,7 @@ t_list	*ft_lstlast(t_list *lst);
 /**
  * Adds the node `new` to the end of the list.
  * 
- * @param[in] lst The list to add the node to.
+ * @param[out] lst The list to add the node to.
  * @param[in] new The node to add to the list.
  */
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -558,7 +576,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
  * Frees the memory of the nodes content using
  * the function `del` and frees the node.
  * 
- * @param[in] lst The list pointing to a specific node.
+ * @param[out] lst The list pointing to a specific node.
  * @param[in] del The function to apply.
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
@@ -567,7 +585,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
  * Deletes and frees the given node and ecery successor of that node,
  * using the function `del`
  * 
- * @param[in] lst The list pointing to a specific node.
+ * @param[out] lst The list pointing to a specific node.
  * @param[in] del The function to apply.
  */
 void	ft_lstclear(t_list **lst, void (*del)(void *));
@@ -575,7 +593,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 /**
  * Iterates the list and applies the function `f` on the content of each node.
  * 
- * @param[in] lst The list pointing to a specific node.
+ * @param[out] lst The list pointing to a specific node.
  * @param[in] f The function to apply.
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
